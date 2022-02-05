@@ -1,12 +1,40 @@
 import { useState, useEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { MotiView } from 'moti'
+import * as Location from 'expo-location'
+import getCurrentWeather from '../../api/SearchAPI'
 
 export default function Clima() {
     const [Temperatura, setTemperatura] = useState('28')
-    const [Localizacao, setLocalizacao] = useState('Aracati - Ce')
+    const [Localizacao, setLocalizacao] = useState('Estados: Atualizado')
     const [EstatoClima, setEstadoClima] = useState('Ensolarado')
+    const [locationCoords, setLocationCoords] = useState(null);
+
+    async function getLocation(){
+        let { status } = await Location.requestPermissionsAsync()
+          if (status !== 'granted') {
+            setErrorMsg('Permission to access location was denied')
+          }else{
+            let location = await Location.getCurrentPositionAsync({})
+            await setLocationCoords(location.coords)
+          }
+      }
+
+      async function setCurrentWeather(){
+        await getLocation()
+        const data = await getCurrentWeather(locationCoords)
     
+        setTemperatura(convertKelvinToC(data[0]))
+        setEstadoClima(data[3])
+        
+      }
+      function convertKelvinToC(kelvin){
+        return parseInt(kelvin - 273)
+      }
+
+      useEffect(() => {
+        setCurrentWeather()
+      }, [])
     return (
         <MotiView style={styles.container}>
             <View tyle={styles.styleTextoTemperatura}>

@@ -2,7 +2,8 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { MotiView } from 'moti'
 import LottieView from 'lottie-react-native'
 import React, { useState, useRef, useEffect } from 'react'
-
+import * as Location from 'expo-location'
+import getCurrentWeather from '../../api/SearchAPI'
 
 export default function CardsWeather() {
     const [like, setLike] = useState(true)
@@ -25,14 +26,42 @@ export default function CardsWeather() {
         }
         
     },[like])
+    const [Temperatura, setTemperatura] = useState('28')
+    const [Localizacao, setLocalizacao] = useState('Estados: Atualizado')
+    const [EstatoClima, setEstadoClima] = useState('Ensolarado')
+    const [locationCoords, setLocationCoords] = useState(null);
+    async function getLocation(){
+        let { status } = await Location.requestPermissionsAsync()
+          if (status !== 'granted') {
+            setErrorMsg('Permission to access location was denied')
+          }else{
+            let location = await Location.getCurrentPositionAsync({})
+            await setLocationCoords(location.coords)
+          }
+      }
 
+      async function setCurrentWeather(){
+        await getLocation()
+        const data = await getCurrentWeather(locationCoords)
+    
+        setTemperatura(convertKelvinToC(data[0]))
+        setEstadoClima(data[3])
+        
+      }
+      function convertKelvinToC(kelvin){
+        return parseInt(kelvin - 273)
+      }
+
+      useEffect(() => {
+        setCurrentWeather()
+      }, [])
     return (
         <MotiView style={styles.container}>
             <View style={styles.Cards}>
                 <View style={styles.ViewTextTemp}>
-                    <Text style={styles.TextTemp}>30°</Text>
-                    <Text style={styles.TextTypeTemp}>Ensolarado</Text>
-                    <Text style={styles.TextLocation}>Aracati - Ce</Text>
+                    <Text style={styles.TextTemp}>{Temperatura}°</Text>
+                    <Text style={styles.TextTypeTemp}>{EstatoClima}</Text>
+                    <Text style={styles.TextLocation}>{Localizacao}</Text>
                 </View>
 
                 <LottieView style={{
