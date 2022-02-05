@@ -25,4 +25,20 @@ Para buscar as cidades você também pode usar um provedor (o OpenWeatherMap mei
   A terceira tela apresenta um Textinput para que o usuário possa buscar as cidades que o mesmo queira. Após selecionar, ele volta para a segunda tela e fica como histórico das cidades/climas.
 </p>
 
+<h3>Links utilizados</h3>
+<h4>API - 1: <a>https://openweathermap.org/</a>
+</h4>
+<h4>API - 2 <a>https://developers.google.com/maps/documentation/places/web-service/get-api-key</a>
+</h4>
+<h4>Video base: <a>https://www.youtube.com/watch?v=Ia5zW8wkAdI</a>
+</h4>
+<h4>Github - Vídeo: <a>https://github.com/clewertonx1/WeatherApp</a>
+</h4>
 
+<h3>Tecnologias utilizadas</h3>
+<h4>- React Native</h4>
+<h4>- Axios</h4>
+<h4>- Open Weather Map - API</h4>
+
+<h3>Estilização</h3>
+<h4>- JS in CSS</h4>
