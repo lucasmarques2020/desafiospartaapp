@@ -20,3 +20,9 @@ Para buscar as cidades você também pode usar um provedor (o OpenWeatherMap mei
 <p>
   A segunda tela mostra os climas buscados pelo usuário. Neles o usuário poderá selecionar qual estará na tela principal e mostrará detalhes do clima atual e futuros.
 </p>
+<img src="https://user-images.githubusercontent.com/69401421/152655402-5aeba6e8-79f0-4849-b7dc-8ad348a21c1b.png" width='200px'/>
+<p>
+  A terceira tela apresenta um Textinput para que o usuário possa buscar as cidades que o mesmo queira. Após selecionar, ele volta para a segunda tela e fica como histórico das cidades/climas.
+</p>
+
+
