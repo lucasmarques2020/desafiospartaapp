@@ -12,4 +12,11 @@ Para buscar as cidades você também pode usar um provedor (o OpenWeatherMap mei
 </p>
 
 <h2>Screens</h2>
-![tela1](https://user-images.githubusercontent.com/69401421/152655072-adc1c408-6b71-4f32-86cb-1858bb521d2b.png)
+<img src="https://user-images.githubusercontent.com/69401421/152655072-adc1c408-6b71-4f32-86cb-1858bb521d2b.png" width='200px'/>
+<p>
+  A primeira tela mostra o clima atual de acordo com as coordenadas adquiridas no seu smatphone. Foram utilizadas OpenWeatherMap para a capitura da latitude e longitude e a expo-location.
+</p>
+<img src="https://user-images.githubusercontent.com/69401421/152655072-adc1c408-6b71-4f32-86cb-1858bb521d2b.png" width='200px'/>
+<p>
+  A segunda tela mostra o clima atual de acordo com as coordenadas adquiridas no seu smatphone. Foram utilizadas OpenWeatherMap para a capitura da latitude e longitude e a expo-location.
+</p>
