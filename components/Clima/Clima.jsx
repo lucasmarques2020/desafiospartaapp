@@ -5,13 +5,13 @@ import * as Location from 'expo-location'
 import getCurrentWeather from '../../api/SearchAPI'
 
 export default function Clima() {
-    const [Temperatura, setTemperatura] = useState('28')
-    const [Localizacao, setLocalizacao] = useState('Estados: Atualizado')
-    const [EstatoClima, setEstadoClima] = useState('Ensolarado')
+    const [Temperatura, setTemperatura] = useState('0')
+    const [Localizacao, setLocalizacao] = useState('status: Atualizado')
+    const [EstatoClima, setEstadoClima] = useState('Buscando...')
     const [locationCoords, setLocationCoords] = useState(null);
 
     async function getLocation(){
-        let { status } = await Location.requestPermissionsAsync()
+        let { status } = await Location.requestForegroundPermissionsAsync()
           if (status !== 'granted') {
             setErrorMsg('Permission to access location was denied')
           }else{

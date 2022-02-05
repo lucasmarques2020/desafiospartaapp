@@ -1,3 +1,4 @@
+import React, {useEffect, useState} from 'react'
 import { StyleSheet, View } from 'react-native'
 import { MotiView } from 'moti'
 import LottieView from 'lottie-react-native'
@@ -7,10 +8,20 @@ import Temperaturas from './../temperaturas/Temperaturas'
 
 
 export default function Day({ navigation }) {
+    const [dia, setDia] = useState(true)
+    useEffect(()=>{
+        var data = new Date()
+        var horas = data.getHours()
+        if(horas >= 17 || horas <=6){
+            setDia(false)
+        }
+    },[])
     return (
-        <MotiView style={styles.container}>
+        <MotiView style={dia ? styles.container : styles.containerNight }>
             <BtnSearch navigation={navigation}/>
-            <MotiView
+           {
+               dia != false && (<>
+                 <MotiView
                 from={{
                     translateY: -40,
                 }}
@@ -85,6 +96,8 @@ export default function Day({ navigation }) {
                 }}
                 style={styles.nuvens5}
             />
+               </>)
+           }
 
             <View style={{
                 flex: 1,
@@ -92,6 +105,8 @@ export default function Day({ navigation }) {
                 alignItems: 'center',
 
             }}>
+                {
+               dia != false && (<>
                 <LottieView style={{
                     flex: 1,
                     width: '80%',
@@ -104,6 +119,30 @@ export default function Day({ navigation }) {
                     loop
                     autoPlay
                 />
+                </>)}
+                 {dia != true && (<>
+                <LottieView style={{
+                    flex: 1,
+                    width: '100%',
+                    position: 'absolute',
+                    top: 0,
+                    alignItems: 'center'
+                }}
+                    source={require("./../../assets/temperatura/moon.json")}
+                    loop
+                    autoPlay
+                />
+                  </>)}
+                {/* <LottieView style={{
+                    flex: 1,
+                    width: '100%',
+                    alignItems: 'center'
+                }}
+                    source={require("./../../assets/temperatura/rain.json")}
+                    loop
+                    autoPlay
+                /> */}
+                
             </View>
             <View>
                 <Clima />
@@ -117,7 +156,17 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#66B2FF'
+        backgroundColor: '#66B2FF',
+        //night
+        // backgroundColor: 'rgba(31, 19, 42, 1)',
+        //rain
+        //backgroundColor: 'rgba(31, 30, 42, 1)'
+    },
+    containerNight: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'rgba(31, 19, 42, 1)',
     },
     nuvens: {
         position: 'absolute',

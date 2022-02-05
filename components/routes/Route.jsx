@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 
 import { createStackNavigator } from '@react-navigation/stack'
 
@@ -12,6 +12,7 @@ import Search from './../search/Search'
 const Stack = createStackNavigator()
 
 export default function Rota(){
+   
     return (
         <Stack.Navigator>
             <Stack.Screen name="Home" component={Day} options={{ title: '', headerTransparent: true }} />

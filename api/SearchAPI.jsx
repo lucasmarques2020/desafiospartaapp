@@ -6,7 +6,7 @@ export default async function getCurrentWeather(locationCoords){
     
     const log = locationCoords.longitude
 
-    var results = []
+    let results = []
 
     await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${log}&appid=08bf4a8b9af4ebbdaa182231a25ea6a5`)
         .then(function (response){
@@ -20,7 +20,6 @@ export default async function getCurrentWeather(locationCoords){
             const currentTemperature = data.main.temp
             
             results = [currentTemperature, temperatureMin, temperatureMax, locationName, wind, humidity]
-            // [currentTemperature, temperatureMin, temperatureMax, locationName, wind, humidity]
             
         })
         .catch(function (error) {
