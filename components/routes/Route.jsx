@@ -17,8 +17,6 @@ export default function Rota(){
         <Stack.Navigator>
             <Stack.Screen name="Home" component={Day} options={{ title: '', headerTransparent: true }} />
             <Stack.Screen name="SearchWeather" component={SearchWeather} options={{ title: '', headerTransparent: true }} />
-            <Stack.Screen name="Night" component={Night} options={{ title: '', headerTransparent: true }} />
-            <Stack.Screen name="Rain" component={Rain} options={{ title: '', headerTransparent: true }} />
             <Stack.Screen name="Search" component={Search} options={{ title: '', headerTransparent: true }} />
         </Stack.Navigator>
 
