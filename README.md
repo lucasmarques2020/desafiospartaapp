@@ -16,7 +16,7 @@ Para buscar as cidades você também pode usar um provedor (o OpenWeatherMap mei
 <p>
   A primeira tela mostra o clima atual de acordo com as coordenadas adquiridas no seu smatphone. Foram utilizadas OpenWeatherMap para a capitura da latitude e longitude e a expo-location.
 </p>
-<img src="https://user-images.githubusercontent.com/69401421/152655072-adc1c408-6b71-4f32-86cb-1858bb521d2b.png" width='200px'/>
+<img src="https://user-images.githubusercontent.com/69401421/152655395-37567206-0e37-4ec3-9365-61cb5192e5bc.png" width='200px'/>
 <p>
-  A segunda tela mostra o clima atual de acordo com as coordenadas adquiridas no seu smatphone. Foram utilizadas OpenWeatherMap para a capitura da latitude e longitude e a expo-location.
+  A segunda tela mostra os climas buscados pelo usuário. Neles o usuário poderá selecionar qual estará na tela principal e mostrará detalhes do clima atual e futuros.
 </p>
