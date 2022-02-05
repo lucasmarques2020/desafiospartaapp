@@ -41,4 +41,4 @@ Para buscar as cidades você também pode usar um provedor (o OpenWeatherMap mei
 <h4>- Open Weather Map - API</h4>
 
 <h3>Estilização</h3>
-<h4>- JS in CSS</h4>
+<h4>- CSS in JS</h4>
