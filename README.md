@@ -12,4 +12,4 @@ Para buscar as cidades você também pode usar um provedor (o OpenWeatherMap mei
 </p>
 
 <h2>Screens</h2>
-<img src=
+![tela1](https://user-images.githubusercontent.com/69401421/152655072-adc1c408-6b71-4f32-86cb-1858bb521d2b.png)
