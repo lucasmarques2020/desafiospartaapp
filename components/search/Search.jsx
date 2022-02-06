@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, TextInput } from 'react-native'
 import { MotiView } from 'moti'
-import LottieView from 'lottie-react-native'
 
 export default function Search() {
     return (

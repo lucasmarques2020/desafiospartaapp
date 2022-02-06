@@ -47,7 +47,7 @@ export default function CardsWeather() {
         const data = await getCurrentWeather(locationCoords)
     
         setTemperatura(convertKelvinToC(data[0]))
-        setEstadoClima(data[3])
+        setEstadoClima(data[1])
         
       }
       function convertKelvinToC(kelvin){

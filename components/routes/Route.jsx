@@ -1,11 +1,8 @@
-import React, {useEffect, useState} from 'react'
-
+import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 
 //telas
 import Day from './../day/Day'
-import Night from './../night/Night'
-import Rain from './../rain/Rain'
 import SearchWeather from './../searchWeather/SearchWeather'
 import Search from './../search/Search'
 
