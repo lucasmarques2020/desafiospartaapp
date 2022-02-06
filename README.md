@@ -37,6 +37,8 @@ Para buscar as cidades você também pode usar um provedor (o OpenWeatherMap mei
 
 <h3>Tecnologias utilizadas</h3>
 <h4>- React Native</h4>
+<h4>- Moti</h4>
+<h4>- Lotties</h4>
 <h4>- Axios</h4>
 <h4>- Open Weather Map - API</h4>
 
